@@ -18,7 +18,7 @@ import { RouterLink } from 'vue-router';
       <RouterLink to="/kanban-board" class="text-white hover:text-gray-300">Tablero Kanban</RouterLink>
     </li>
     <li>
-      <RouterLink to="/split-account" class="text-white hover:text-gray-300">Dividir Cuentas</RouterLink>
+      <RouterLink to="/split-account" class="text-white hover:text-gray-300">Dividir Cuenta</RouterLink>
     </li>
   </ul>
 </nav>

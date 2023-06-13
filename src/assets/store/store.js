@@ -27,10 +27,7 @@ export function getTotalPlusTip () {
 export function distributeAccoun(){
     store.people = []
 
-    const total = store.params.total
-    const tip = store.params.tip
     const numPeople = store.params.numPeople
-    // store.params.pendingToPay = getTotalPlusTip()
 
     const totalPerPerson = getTotalPlusTip() / numPeople;
 

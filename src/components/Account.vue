@@ -5,21 +5,17 @@
 
 const statePay = ref(false)
 
-const paid = (id) => {
-    statePay.value = true
-    pay(id, true)
+const paid = (id, valuePaid) => {
+    statePay.value = valuePaid
+    pay(id, valuePaid)
 }
 
-const unPay = (id) => {
-    statePay.value = false
-    pay(id, false)
-}
 </script>
 
 <template>
     <template v-if="store.people.length === 0" >
         <div class="bg-red-300 text-center font-bold text-xl rounded-lg p-2">
-        No hay cuentas
+        No hay cuenta
     </div>
     </template>
     
@@ -49,22 +45,21 @@ const unPay = (id) => {
                     Persona {{ item.numPerson }}
                 </div>
 
-                <div class="p-4 bg-rose-300 text-center text-lg font-bold">
+                <div class="p-4 bg-rose-300 text-center text-lg font-bold" :class="[getPendingToPay() === 0? 'text-lime-700' : null]">
                     S/ {{ item.toPay }}
                 </div>
 
                 <div class="p-4 bg-rose-300">
                     <Tag class="bg-gray-900 "
-                        @actionEmit="paid(item.id)"
+                        @actionEmit="paid(item.id, true)"
                         v-if="!item.paid"
                     >
                         <template #icon > 
                             <span> ✔ Pagar </span>
                         </template>
                     </Tag>
-                    <div >
                         <Tag class="p-1 text-center bg-cyan-400 border-none"   style="border-radius: 12px;"
-                        @actionEmit="unPay(item.id)"
+                        @actionEmit="paid(item.id, false)"
                         v-if="item.paid"
                     >
                         <template #content > 
@@ -79,8 +74,6 @@ const unPay = (id) => {
                             </span>
                         </template>
                     </Tag>
-                    </div>
-                   
                 </div>
             </div>
         </div>
