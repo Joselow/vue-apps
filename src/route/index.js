@@ -15,6 +15,10 @@ const router = createRouter({
             path: '/kanban-board',
             component: ()=> import('@/views/KanbanBoardView.vue')
         },
+        {
+            path: '/split-account',
+            component: ()=> import('@/views/SplitAccountView.vue')
+        },
         // {
         //     path: '/',
         //     component: () => import('@/App.vue')

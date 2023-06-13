@@ -1,4 +1,6 @@
 <script >
+import { RouterLink } from 'vue-router';
+
 
 </script>
 
@@ -7,13 +9,16 @@
 <nav class="bg-gray-900">
   <ul class="flex gap-6 py-4 px-6">
     <li>
-      <a href="/" class="text-white hover:text-gray-300">Home</a>
+      <RouterLink to="/" class="text-white hover:text-gray-300">Home</RouterLink>
     </li>
     <li>
-      <a href="/tags" class="text-white hover:text-gray-300">Tags</a>
+      <RouterLink to="/tags" class="text-white hover:text-gray-300">Tags</RouterLink>
     </li>
     <li>
-      <a href="/kanban-board" class="text-white hover:text-gray-300">Tablero Kanban</a>
+      <RouterLink to="/kanban-board" class="text-white hover:text-gray-300">Tablero Kanban</RouterLink>
+    </li>
+    <li>
+      <RouterLink to="/split-account" class="text-white hover:text-gray-300">Dividir Cuentas</RouterLink>
     </li>
   </ul>
 </nav>

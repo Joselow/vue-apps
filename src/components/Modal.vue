@@ -25,12 +25,7 @@ const closeModal = () => {
     </slot>
 
   </div>
-</div>
-
-
-
-
-    
+</div>  
 </template>
 
 <style scoped>
