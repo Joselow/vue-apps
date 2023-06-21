@@ -9,16 +9,16 @@ import { RouterLink } from 'vue-router';
 <nav class="bg-gray-900">
   <ul class="flex gap-6 py-4 px-6">
     <li>
-      <RouterLink to="/" class="text-white hover:text-gray-300">Home</RouterLink>
+      <RouterLink :to="{ name: 'home' }" class="text-white hover:text-gray-300">Home</RouterLink>
     </li>
     <li>
-      <RouterLink to="/tags" class="text-white hover:text-gray-300">Tags</RouterLink>
+      <RouterLink :to="{ name: 'tags' }" class="text-white hover:text-gray-300">Tags</RouterLink>
     </li>
     <li>
-      <RouterLink to="/kanban-board" class="text-white hover:text-gray-300">Tablero Kanban</RouterLink>
+      <RouterLink :to="{ name: 'kanban-board' }" class="text-white hover:text-gray-300">Tablero Kanban</RouterLink>
     </li>
     <li>
-      <RouterLink to="/split-account" class="text-white hover:text-gray-300">Dividir Cuenta</RouterLink>
+      <RouterLink :to="{ name: 'split-account' }" class="text-white hover:text-gray-300">Dividir Cuenta</RouterLink>
     </li>
   </ul>
 </nav>
