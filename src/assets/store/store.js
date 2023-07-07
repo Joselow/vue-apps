@@ -17,6 +17,11 @@ export const store = reactive({
         // }
     ]
 })
+export const formAccount = reactive({
+    total: 125,
+    tip: 3,
+    numPeople: 5 ,
+})
 
 export function getTotalPlusTip () {
     const totalPlusTip = store.params.total * (store.params.tip / 100 +1)
@@ -28,7 +33,6 @@ export function distributeAccoun(){
     store.people = []
 
     const numPeople = store.params.numPeople
-
     const totalPerPerson = getTotalPlusTip() / numPeople;
 
     for (let index = 0; index < numPeople; index++) {

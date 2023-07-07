@@ -1,7 +1,7 @@
 <script setup>
-    import {reactive, ref, defineAsyncComponent } from 'vue'
-    import Board from '../components/Board.vue';
-    import Tag from "../components/Tag.vue";
+    import { defineAsyncComponent, reactive, ref } from 'vue';
+import Board from '../components/Board.vue';
+import Tag from "../components/Tag.vue";
     // import Modal from '../components/Modal.vue';
 
 const Modal = defineAsyncComponent(() =>
@@ -104,6 +104,8 @@ const onDrop = (event, targetBoard) => {
 
 <template>
     <Teleport to="body">
+        <Transition>
+
         <Modal v-show="showBoardModal" @closeEmit="showBoardModal=false"> 
             <template #formModal>
                  <h2 class="text-2xl font-bold mb-4">Ingresa un nombre</h2>
@@ -119,6 +121,8 @@ const onDrop = (event, targetBoard) => {
                 </form>
             </template>
         </Modal>
+    </Transition>
+
     </Teleport>
    
     <div class="flex justify-center align-center">
@@ -130,7 +134,7 @@ const onDrop = (event, targetBoard) => {
     </div>
    
 
-        <div class="boards flex flex-wrap gap-5">            
+        <div class="boards flex flex-wrap gap-5 justify-center align-center">            
             <Board v-for="(board, index) in boards" :key="board.id" @newItem="(item) => handleSaveItem(item, board)"
                 @deleteBoard="handleDeleteBoard(index)"
                 @drop="onDrop($event, board)"
@@ -161,5 +165,4 @@ const onDrop = (event, targetBoard) => {
 </template>
 
 <style scoped>
-    
 </style>

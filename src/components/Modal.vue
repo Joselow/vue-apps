@@ -20,9 +20,12 @@ const closeModal = () => {
       </svg>
     </button>
 
-    <slot name="formModal">
+    <div class="text-center">
+      <slot name="formModal" >
 
-    </slot>
+</slot>
+    </div>
+    
 
   </div>
 </div>  
