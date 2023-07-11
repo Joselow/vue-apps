@@ -1,5 +1,5 @@
 <script setup>
-import { cleanAll, formAccount, store } from '@/assets/store/store';
+import { cleanAll, formAccount, store } from '@/store/store';
 import { ref } from 'vue';
 import Account from '../components/Account.vue';
 import FomAccount from '../components/FomAccount.vue';
@@ -48,11 +48,12 @@ const clean = () => {
     </div>
 
   </div>
+  
 </template>
 
-<style >
+<style scoped>
 
-.v-enter-active,
+
 .v-leave-active {
   transition: opacity 0.4s ease;
 }
@@ -61,4 +62,6 @@ const clean = () => {
 .v-leave-to {
   opacity: 0;
 }
+
+
 </style>

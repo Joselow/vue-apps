@@ -2,6 +2,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-background);
   /* display: flex;
   justify-content: center; 
   align-items: start;
@@ -9,4 +11,13 @@ body {
   text-align: center; */
 }
 
+:root {
+  --color-background: #eff0f3;
+  --color-button: #ff8e3c;
+  --color-text:#2a2a2a;
+  --color-link: #ff8e3c;
+  --color-sidebar: #0d0d0d;
+  --color-sidebarText: #fffffe;
+  --color-cardBackground: #fffffe;
+}
 

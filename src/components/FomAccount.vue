@@ -1,6 +1,7 @@
 <script setup>
-    import { cleanAll, distributeAccoun, formAccount, store } from '@/assets/store/store';
+    import { cleanAll, distributeAccoun, formAccount, store } from '@/store/store';
 import { ref } from 'vue';
+;
 const props = defineProps({
     hiddenButtonClean:{
         type: Boolean,
@@ -56,7 +57,7 @@ const clean = () => {
     </div>
 
     <div>
-        <button class="bg-cyan-400 m-5 p-2 w-40 rounded-lg font-bold text-white" type="button" title="Calcular cuenta"
+        <button class="btn-float bg-cyan-400 m-5 p-2 w-40 rounded-lg font-bold text-white" type="button" title="Calcular cuenta"
             @click="CalculateAccount"
         >Calcular</button>
     </div>
@@ -73,5 +74,18 @@ const clean = () => {
 </template>
 
 <style scoped>
-    
+    .btn-float{
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+.btn-float:hover{
+    box-shadow: 0 8px 8px 0 #0000009c,0 8px 8px 0 #000000ca;
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    -moz-transform:translate(0px,5px);
+}
+
+
+
 </style>

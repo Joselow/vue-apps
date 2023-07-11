@@ -165,4 +165,13 @@ const onDrop = (event, targetBoard) => {
 </template>
 
 <style scoped>
+.v-leave-active {
+  transition: opacity 0.4s ease;
+	animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 </style>

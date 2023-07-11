@@ -1,7 +1,8 @@
 <script setup>
-    import { getPendingToPay, getTotalPlusTip, pay, store } from '@/assets/store/store.js';
+    import { getPendingToPay, getTotalPlusTip, pay, store } from '@/store/store';
 import { ref } from 'vue';
 import Tag from './Tag.vue';
+
 
 const statePay = ref(false)
 

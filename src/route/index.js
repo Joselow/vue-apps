@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
+
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -24,6 +25,7 @@ const router = createRouter({
             name: 'split-account',
             component: ()=> import('@/views/SplitAccountView.vue')
         },
+       
         // {
         //     path: '/',
         //     component: () => import('@/App.vue')
