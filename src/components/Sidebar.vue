@@ -11,7 +11,9 @@ const clickIcon = () => {
 </script>
 
 <template>
-    <div class=" h-screen p-4 w-60 container" :class="[collapse ? 'collapsed' : 'expanded']">
+    <!-- <div class="sidebarAtras w-60" :class="[collapse ? 'collapsed' : 'expanded']"></div> -->
+
+    <div class=" h-screen p-4 w-60 container rounded-2xl overflow-auto" :class="[collapse ? 'collapsed' : 'expanded'] ">
 
         <div class="flex gap-2 h-20">
             <div class="flex gap-3 justify-center items-center ">
@@ -43,12 +45,16 @@ const clickIcon = () => {
 
 <style scoped>
 .container {
+
     transition: width 0.3s ease-out;
-    position: relative;
+    /* position: fixed; */
     font-weight: bold;
  
 }
+/* .sidebarAtras{
+    transition: width .4s ease-out;
 
+} */
 .collapsed {
     width: 80px;
 }

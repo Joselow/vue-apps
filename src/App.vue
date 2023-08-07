@@ -27,6 +27,11 @@ const items = ref([
     icon: 'fa-sharp fa-solid fa-file-invoice-dollar',
     name: 'Divir Cuenta',
     path: 'split-account'
+  },
+  {
+    icon: 'fa-sharp fa-solid fa-file-invoice-dollar',
+    name: 'Simón dice',
+    path: 'simon-says'
   }
 ])
 
@@ -37,12 +42,10 @@ const items = ref([
 
 
 <template>
-  <Layout>
+  <Layout :collapse = collapse>
     <template #sidebar>
 
-
-
-      <SideBar @clickBar="collapse = !collapse">
+      <SideBar @clickBar="collapse = !collapse" class="">
         <template #img>
           <img src="./assets/img/a.png" alt="Girl in a jacket" width="80"
             class=" rounded-full max-w-full align-middle border-none ">
@@ -101,7 +104,7 @@ const items = ref([
 
     </template>
     <template #mainContent>
-      <div class="flex justify-center align-center ">
+      <div class=" flex justify-center align-center ">
         <div>
           <router-view></router-view>
         </div>
@@ -118,6 +121,7 @@ const items = ref([
 </template>
 
 <style scoped>
+
 .collapsed{
   transition: 0.3s ease;
   font-size: 18px;

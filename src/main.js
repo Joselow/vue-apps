@@ -1,4 +1,5 @@
 import '@fortawesome/fontawesome-free/css/all.css';
+import 'animate.css';
 import './assets/main.css';
 
 import router from './route';

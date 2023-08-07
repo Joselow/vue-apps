@@ -1,6 +1,6 @@
 <script setup>
     import { ref } from "vue";
-    import Tag from "./Tag.vue";
+import Tag from "./Tag.vue";
 
 const emits = defineEmits(['newItem', 'deleteBoard'])
 

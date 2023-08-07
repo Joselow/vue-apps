@@ -25,6 +25,11 @@ const router = createRouter({
             name: 'split-account',
             component: ()=> import('@/views/SplitAccountView.vue')
         },
+        {
+            path: '/simon-dice',
+            name: 'simon-says',
+            component: ()=> import('@/views/SimoSaysView.vue')
+        },
        
         // {
         //     path: '/',
