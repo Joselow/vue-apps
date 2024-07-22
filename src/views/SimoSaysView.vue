@@ -133,7 +133,7 @@ const showMsgLose = computed(() => {
 
 <template>
   <div class="">
-    <div id="simon-game" class="w-80 sm:w-96 bg-gray-800 shadow-lg p-6 rounded-lg">
+    <div id="simon-game" class="relative w-80 sm:w-96 bg-gray-800 shadow-lg p-6 rounded-lg">
       <h6 class="text-gray-300  absolute top-2 right-3" v-show="isInGame">Nivel {{ level }}</h6>
       <h1 class="text-2xl font-semibold mb-4 text-white text-center">Simón Dice</h1>
       <div class="grid grid-cols-2 gap-4">
