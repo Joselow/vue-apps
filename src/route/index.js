@@ -5,10 +5,8 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes:[
         {
-            path: '/',
-            name:'home',
-            alias: '/home',
-            component: ()=> import('@/views/HomeView.vue')
+          path: '/',
+          redirect: '/etiquetas'
         },
         {
             path: '/etiquetas',
@@ -30,11 +28,11 @@ const router = createRouter({
             name: 'simon-says',
             component: ()=> import('@/views/SimoSaysView.vue')
         },
-       
-        // {
-        //     path: '/',
-        //     component: () => import('@/App.vue')
-        // }
+        {
+          path: '/:pathMatch(.*)*',
+          name: 'not-found',
+          component: () => import('@/views/NotFoundView.vue')
+        }
     ]
 })
 

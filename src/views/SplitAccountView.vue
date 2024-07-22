@@ -44,9 +44,7 @@ const clean = () => {
     </div>
     <div class="accounts col-span-5 max-[1024px]:col-span-7 ">
       <Account></Account>
-
     </div>
-
   </div>
   
 </template>

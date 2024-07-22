@@ -1,115 +1,65 @@
 <script setup>
-const props = defineProps({
-    collapse :{
-        typeof: Boolean,
-        default: false
-    }
-})
+import { ref } from 'vue';
+
+const seeMobileMenu = ref(false);
+const seeMenu = () => {
+  seeMobileMenu.value = !seeMobileMenu.value;
+};
 </script>
 
 <template>
-    <div class="flex gap-3 ">
-        <div class="sidebar  min-h-screen ">
-            <slot name='sidebar'>
-               
-            </slot>
+  <div class="flex flex-col min-h-screen">
+    <nav class="bg-gray-800">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <button type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu" aria-expanded="false" @click="seeMenu">
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+              <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex flex-shrink-0 items-center">
+              
+              <img class="h-8 w-auto" src="../assets/img/war-mode.jpg" alt="imagen">
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <slot name='sidebar'></slot>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="content min-h-screen  flex gap-3 flex-col  w-full mr-2" :class="[collapse? 'contentCollapsed' : null]">
-            <div class="card  border-none text-center p-2 w-full h-24 rounded-xl " :class="[ collapse ?'sizeFixedHeader' : 'contentHeader']">
-                <slot name='headerContent'>
-                    By joselow
-                </slot>
-            </div>
-            <div class=" hidecontentHeader w-full h-24 rounded-xl " >
-            </div>
-
-            <div class="card contentMain  flex flex-grow items-start justify-center ">
-                <div class="w-full rounded-lg ">
-                    <slot name='mainContent'>
-
-                    </slot>
-                </div>
-            </div>
-
-            <div class=" card text-center  p-2 h-16 rounded-xl" :class="[ collapse ?'sizeFixedFooter' : 'contentFooter']">
-                <slot name='footerContent'>
-                    By joselow
-                </slot>
-            </div>
+      <div class="sm:hidden" :class="{ 'show': seeMobileMenu, 'hidden': !seeMobileMenu }" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <slot name='sidebar'/>
         </div>
+      </div>
+    </nav>
 
+    <div class="flex-grow">
+      <slot name='mainContent' />
     </div>
+    
+    <footer class="bg-white shadow mt-4 dark:bg-gray-800">
+      <div class="w-full mx-auto max-w-screen-xl p-4 text-center">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://github.com/Joselow" class="hover:underline">@Joselow</a></span>
+      </div>
+    </footer>
+  </div>
 </template>
 
-<style scoped> 
-.content{
-    margin-left: 250px;
-    transition: margin .2s ease;
-}
-.contentCollapsed{
-    transition: margin .7s ease; 
-    margin-left: 90px;
-}
-.sizeFixed{
-    width: calc(100% - 50px);
-}
-.sidebar {
-    height: 100vh;
-    position: fixed;
-    z-index: 1;
-     background-color: var(--color-text);
-     color: var(--color-sidebarText);
- }
- .contentHeader{
-    transition: width .2s;
-    position: fixed;
-    top: 0;
-    width: calc(100% - 256px);
-    z-index: 5;
-     margin-top: 20px;
-
- }
-.hidecontentHeader{
-    position: fixed;
-    top: 0;
-    z-index: 3;
-    background-color: #eff0f3;
-
-}
- .sizeFixedHeader{
-    transition: width .6s;
-    position: fixed;
-    top: 0;
-    z-index: 5;
-    width: calc(100% - 100px);     
-    margin-top: 20px;
-
- }
- .sizeFixedFooter{
-    transition: width .6s;
-    position: fixed;
-    bottom: 0;
-    width: calc(100% - 100px);
-    z-index: 1;
- }
-
- .contentMain{
-    margin-bottom: 75px ;
-    margin-top: 125px  ;
- }
-
- .contentFooter {
-    transition: width .2s;
-    position: fixed;
-    bottom: 0;
-    width: calc(100% - 260px);
-    z-index: 1;
- }
-
- .card {
-     background: var(--color-cardBackground)    
- }
-
- 
- </style>
+<style scoped>
+</style>
